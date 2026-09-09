@@ -47,7 +47,7 @@ export function Dialog({ open, title, onClose, children }: DialogProps) {
       // container-nya (stage). Tanpa batas rem: rem tidak ikut membesar
       // saat zoom-out, sehingga min(90cqw, 26rem) dulu mengunci dialog di 416px
       // sementara background terus membesar -> dialog terlihat mengecil.
-      className="dialog-card m-auto h-[78cqh] w-[90cqw] overflow-y-auto rounded-md bg-[#fff8f5] p-3 text-stone-800 shadow-2xl"
+      className="dialog-card m-auto h-fit max-h-[78cqh] w-[90cqw] overflow-y-auto rounded-md bg-[#fff8f5] p-3 text-stone-800 shadow-2xl"
     >
       <div className="flex items-start justify-between gap-4">
         <h2 id={titleId} className="text-xl font-bold">
