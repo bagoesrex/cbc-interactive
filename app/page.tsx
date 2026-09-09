@@ -12,7 +12,7 @@ export default function HomePage() {
             fill
             priority
             draggable={false}
-            className="cursor-pointer object-contain filter-[drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
+            className="cursor-pointer object-contain transition-[filter] duration-200 hover:scale-103 hover:filter-[brightness(1.07)_drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
           />
         </div>
         <div className="animate-scale-pulse absolute top-[50%] left-[50%] aspect-475/470 w-[30%]">
@@ -22,7 +22,7 @@ export default function HomePage() {
             fill
             priority
             draggable={false}
-            className="cursor-pointer object-contain filter-[drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
+            className="cursor-pointer object-contain transition-[filter] duration-200 hover:scale-103 hover:filter-[brightness(1.07)_drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
           />
         </div>
         <div className="animate-scale-pulse absolute top-[36%] right-[5%] aspect-451/384 w-[15%] -scale-x-100 rotate-5">
@@ -32,7 +32,7 @@ export default function HomePage() {
             fill
             priority
             draggable={false}
-            className="cursor-pointer object-contain filter-[drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
+            className="cursor-pointer object-contain transition-[filter] duration-200 hover:scale-103 hover:filter-[brightness(1.07)_drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
           />
         </div>
         <div className="animate-scale-pulse absolute top-[23%] left-[47%] aspect-423/405 w-[12%]">
@@ -42,7 +42,7 @@ export default function HomePage() {
             fill
             priority
             draggable={false}
-            className="cursor-pointer object-contain filter-[drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
+            className="cursor-pointer object-contain transition-[filter] duration-200 hover:scale-103 hover:filter-[brightness(1.07)_drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
           />
         </div>
       </HeroSection>
