@@ -47,10 +47,10 @@ export function Dialog({ open, title, onClose, children }: DialogProps) {
       // container-nya (stage). Tanpa batas rem: rem tidak ikut membesar
       // saat zoom-out, sehingga min(90cqw, 26rem) dulu mengunci dialog di 416px
       // sementara background terus membesar -> dialog terlihat mengecil.
-      className="dialog-card m-auto h-fit max-h-[78cqh] w-[90cqw] overflow-y-auto rounded-md bg-[#fff8f5] text-stone-800 shadow-2xl"
+      className="dialog-card m-auto h-fit max-h-[78cqh] w-[90cqw] overflow-y-auto rounded-[1.8cqw] bg-[#fff8f5] text-stone-800 shadow-2xl"
     >
-      <div className="flex items-start justify-between gap-4 border-b border-b-gray-300 bg-gray-100 px-2 py-3">
-        <p id={titleId} className="font-dancing text-xl font-extrabold">
+      <div className="flex items-center justify-between gap-[3.2cqw] border-b-[0.5cqw] border-b-gray-300 bg-gray-100 px-[1.6cqw] py-[2.4cqw]">
+        <p id={titleId} className="font-dancing text-[5cqw] font-extrabold">
           {title}
         </p>
         <button
@@ -58,15 +58,17 @@ export function Dialog({ open, title, onClose, children }: DialogProps) {
           autoFocus
           onClick={onClose}
           aria-label="Tutup dialog"
-          className="cursor-pointer rounded-md px-2.5 py-1 text-lg leading-none hover:bg-stone-800/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500"
+          className="cursor-pointer rounded-[0.4cqw] px-[2cqw] py-[0.8cqw] text-[3.6cqw] leading-none hover:bg-stone-800/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500"
         >
           ✕
         </button>
       </div>
-      <div className="bg-white px-2 py-4 text-center text-sm">{children}</div>
-      <div className="border-t bg-red-200 py-1">
-        <div className="mx-auto w-[40%] rounded-sm border bg-white px-1 text-center">
-          <p className="font-dancing text-xs font-bold tracking-[1.1]">
+      <div className="bg-white text-[2.8cqw] outline-[0.5cqw] outline-offset-[-1.2cqw] outline-black/50 outline-dotted">
+        {children}
+      </div>
+      <div className="border-t-[0.4cqw] bg-red-200 py-[0.8cqw]">
+        <div className="mx-auto w-[40%] rounded-[0.8cqw] border-[0.4cqw] bg-white px-[0.8cqw] text-center">
+          <p className="font-dancing text-[3cqw] font-bold tracking-[0.4cqw]">
             giftkuy.id
           </p>
         </div>

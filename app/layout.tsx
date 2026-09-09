@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Dancing_Script, Geist, Geist_Mono } from "next/font/google";
+import {
+  Dancing_Script,
+  Geist,
+  Geist_Mono,
+  Architects_Daughter,
+} from "next/font/google";
 import { SITE } from "@/config/site";
 import { cn } from "@/lib/utils";
 import "./globals.css";
@@ -22,6 +27,13 @@ const dancingScript = Dancing_Script({
   subsets: ["latin"],
 });
 
+const architectsDaughter = Architects_Daughter({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-architects-daughter",
+});
+
 export const metadata: Metadata = {
   title: SITE.name,
   description: SITE.description,
@@ -35,6 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         geistSans.variable,
         geistMono.variable,
         dancingScript.variable,
+        architectsDaughter.variable,
         "h-full antialiased",
       )}
     >

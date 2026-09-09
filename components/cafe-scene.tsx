@@ -23,13 +23,29 @@ const HOTSPOTS: Hotspot[] = [
     hotspotClassName: "top-[28cqh] left-[8cqw] aspect-407/624 w-[38cqw]",
     dialogTitle: "Selamat Ulang Tahun!",
     dialogBody: (
-      <>
-        <p>Di kafe kecil yang manis ini, semua merayakan harimu.</p>
-        <p className="mt-2">
-          Semoga semua hal baik datang menghampirimu — seperti tulisan di
-          jendela itu: <em>Good Things Ahead</em>. ♡
-        </p>
-      </>
+      <div className="relative z-0 overflow-hidden px-[2.4cqw] py-[2.4cqw]">
+        <div className="font-architects-daughter relative z-10 space-y-[2.4cqw] text-[3.5cqw] font-[395] tracking-[0.3cqw]">
+          <p>Halo, nama! 🎂</p>
+          <p>
+            Selamat hari lahir. Semoga tahun ini kamu makin sering tersenyum
+            karena hal-hal kecil, dan makin jarang capek karena hal-hal besar.
+          </p>
+          <p>
+            Terima kasih sudah jadi orang yang selalu bikin hari-hari terasa
+            lebih ringan. Selamat ulang tahun! ♡
+          </p>
+        </div>
+        <div className="absolute right-0 bottom-[-16cqw] z-0 aspect-407/624 w-[40cqw] opacity-20">
+          <Image
+            src={"/character.png"}
+            alt=""
+            fill
+            priority
+            draggable={false}
+            className="pointer-events-none -scale-x-100 object-contain select-none"
+          />
+        </div>
+      </div>
     ),
   },
   {
@@ -41,7 +57,7 @@ const HOTSPOTS: Hotspot[] = [
     dialogBody: (
       <>
         <p>Klik bukan sekadar kado — ini doa yang dibungkus pita.</p>
-        <p className="mt-2">
+        <p className="mt-[1.6cqw]">
           Semoga tahun ini manisnya melebihi semua kue di etalase kafe ini!
         </p>
       </>
@@ -57,7 +73,7 @@ const HOTSPOTS: Hotspot[] = [
     dialogBody: (
       <>
         <p>Potongan momen manis untuk disimpan baik-baik:</p>
-        <div className="mt-3 grid grid-cols-2 gap-2">
+        <div className="mt-[2.4cqw] grid grid-cols-2 gap-[1.6cqw]">
           {[
             { src: "/memories.png", alt: "Kenangan manis" },
             { src: "/character.png", alt: "Perayaan ulang tahun" },
@@ -93,7 +109,7 @@ const HOTSPOTS: Hotspot[] = [
           &ldquo;You are special&rdquo; — begitu kata kartu di meja itu, dan itu
           benar adanya.
         </p>
-        <p className="mt-2">
+        <p className="mt-[1.6cqw]">
           Terima kasih sudah menjadi alasan kafe ini terasa hangat hari ini. ♡
         </p>
       </>

@@ -18,6 +18,7 @@
   --font-mono: var(--font-geist-mono);
   /* Daftarkan Dancing Script ke Tailwind -> utility `font-dancing`. */
   --font-dancing: var(--font-dancing-script);
+  --font-architects-daughter: var(--font-architects-daughter);
 }
 
 body {
