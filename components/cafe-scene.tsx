@@ -21,7 +21,7 @@ const HOTSPOTS: Hotspot[] = [
     label: "Buka pesan ulang tahun",
     src: "/character.png",
     hotspotClassName: "top-[28cqh] left-[8cqw] aspect-407/624 w-[38cqw]",
-    dialogTitle: "Selamat Ulang Tahun! 🎂",
+    dialogTitle: "Selamat Ulang Tahun!",
     dialogBody: (
       <>
         <p>Di kafe kecil yang manis ini, semua merayakan harimu.</p>
@@ -37,7 +37,7 @@ const HOTSPOTS: Hotspot[] = [
     label: "Buka kado spesial",
     src: "/gift.png",
     hotspotClassName: "top-[50cqh] left-[50cqw] aspect-475/470 w-[30cqw]",
-    dialogTitle: "Kado Spesial 🎁",
+    dialogTitle: "Kado Spesial",
     dialogBody: (
       <>
         <p>Klik bukan sekadar kado — ini doa yang dibungkus pita.</p>
@@ -53,7 +53,7 @@ const HOTSPOTS: Hotspot[] = [
     src: "/gallery.png",
     hotspotClassName:
       "top-[36cqh] right-[5cqw] aspect-451/384 w-[15cqw] -scale-x-100 rotate-5",
-    dialogTitle: "Galeri Kenangan 📸",
+    dialogTitle: "Galeri Kenangan",
     dialogBody: (
       <>
         <p>Potongan momen manis untuk disimpan baik-baik:</p>
@@ -86,7 +86,7 @@ const HOTSPOTS: Hotspot[] = [
     label: "Buka surat untukmu",
     src: "/letter.png",
     hotspotClassName: "top-[23cqh] left-[47cqw] aspect-423/405 w-[12cqw]",
-    dialogTitle: "Surat Untukmu 💌",
+    dialogTitle: "Surat Untukmu",
     dialogBody: (
       <>
         <p className="italic">
@@ -110,7 +110,7 @@ export function CafeScene() {
       // [container-type:size] (bukan inline-size) agar cqw DAN cqh
       // sama-sama resolve ke stage ini. Aman karena ukuran stage
       // sudah definitif (width eksplisit + aspect-ratio), tidak dari konten.
-      className="[container-type:size] relative m-auto overflow-hidden bg-cover bg-center bg-no-repeat"
+      className="@container-size relative m-auto overflow-hidden bg-cover bg-center bg-no-repeat"
       style={{
         aspectRatio: `${HERO_IMAGE.width} / ${HERO_IMAGE.height}`,
         // Ikat ke tinggi viewport, bukan ke 934px, agar tetap

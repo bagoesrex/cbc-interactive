@@ -47,24 +47,30 @@ export function Dialog({ open, title, onClose, children }: DialogProps) {
       // container-nya (stage). Tanpa batas rem: rem tidak ikut membesar
       // saat zoom-out, sehingga min(90cqw, 26rem) dulu mengunci dialog di 416px
       // sementara background terus membesar -> dialog terlihat mengecil.
-      className="dialog-card m-auto h-fit max-h-[78cqh] w-[90cqw] overflow-y-auto rounded-md bg-[#fff8f5] p-3 text-stone-800 shadow-2xl"
+      className="dialog-card m-auto h-fit max-h-[78cqh] w-[90cqw] overflow-y-auto rounded-md bg-[#fff8f5] text-stone-800 shadow-2xl"
     >
-      <div className="flex items-start justify-between gap-4">
-        <h2 id={titleId} className="text-xl font-bold">
+      <div className="flex items-start justify-between gap-4 border-b border-b-gray-300 bg-gray-100 px-2 py-3">
+        <p id={titleId} className="font-dancing text-xl font-extrabold">
           {title}
-        </h2>
-        {/* Icon-only button wajib punya nama aksesibel. */}
+        </p>
         <button
           type="button"
           autoFocus
           onClick={onClose}
           aria-label="Tutup dialog"
-          className="cursor-pointer rounded-full bg-stone-800/5 px-2.5 py-1 text-lg leading-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500"
+          className="cursor-pointer rounded-md px-2.5 py-1 text-lg leading-none hover:bg-stone-800/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500"
         >
           ✕
         </button>
       </div>
-      <div className="mt-3 text-sm leading-relaxed">{children}</div>
+      <div className="bg-white px-2 py-4 text-center text-sm">{children}</div>
+      <div className="border-t bg-red-200 py-1">
+        <div className="mx-auto w-[40%] rounded-sm border bg-white px-1 text-center">
+          <p className="font-dancing text-xs font-bold tracking-[1.1]">
+            giftkuy.id
+          </p>
+        </div>
+      </div>
     </dialog>
   );
 }
