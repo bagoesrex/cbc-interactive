@@ -1,10 +1,22 @@
-import { HeroSection } from "@/components/home/hero-section";
+import { HERO_IMAGE } from "@/config/site";
 import Image from "next/image";
 
 export default function HomePage() {
   return (
     <main className="flex min-h-dvh">
-      <HeroSection>
+      {/* Stage = background + area main. @container membuat 1cqw / var(--stroke)
+          pada anak-anaknya resolve ke lebar background ini. */}
+      <div
+        className="@container relative m-auto overflow-hidden bg-cover bg-center bg-no-repeat"
+        style={{
+          aspectRatio: `${HERO_IMAGE.width} / ${HERO_IMAGE.height}`,
+          // Ikat ke tinggi viewport, bukan ke 934px, agar tetap
+          // full-height walau zoom-out (viewport CSS membesar).
+          width: `min(100vw, calc(100dvh * ${HERO_IMAGE.width} / ${HERO_IMAGE.height}))`,
+          maxWidth: "100vw",
+          backgroundImage: `url(${HERO_IMAGE.src})`,
+        }}
+      >
         <div className="animate-scale-pulse absolute top-[28%] left-[8%] aspect-407/624 w-[38%]">
           <Image
             src="/character.png"
@@ -12,7 +24,7 @@ export default function HomePage() {
             fill
             priority
             draggable={false}
-            className="cursor-pointer object-contain transition-[filter] duration-200 hover:scale-103 hover:filter-[brightness(1.07)_drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
+            className="sticker-outline cursor-pointer object-contain"
           />
         </div>
         <div className="animate-scale-pulse absolute top-[50%] left-[50%] aspect-475/470 w-[30%]">
@@ -22,7 +34,7 @@ export default function HomePage() {
             fill
             priority
             draggable={false}
-            className="cursor-pointer object-contain transition-[filter] duration-200 hover:scale-103 hover:filter-[brightness(1.07)_drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
+            className="sticker-outline cursor-pointer object-contain"
           />
         </div>
         <div className="animate-scale-pulse absolute top-[36%] right-[5%] aspect-451/384 w-[15%] -scale-x-100 rotate-5">
@@ -32,7 +44,7 @@ export default function HomePage() {
             fill
             priority
             draggable={false}
-            className="cursor-pointer object-contain transition-[filter] duration-200 hover:scale-103 hover:filter-[brightness(1.07)_drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
+            className="sticker-outline cursor-pointer object-contain"
           />
         </div>
         <div className="animate-scale-pulse absolute top-[23%] left-[47%] aspect-423/405 w-[12%]">
@@ -42,10 +54,10 @@ export default function HomePage() {
             fill
             priority
             draggable={false}
-            className="cursor-pointer object-contain transition-[filter] duration-200 hover:scale-103 hover:filter-[brightness(1.07)_drop-shadow(var(--stroke)_0_0_white)_drop-shadow(calc(var(--stroke)*-1)_0_0_white)_drop-shadow(0_var(--stroke)_0_white)_drop-shadow(0_calc(var(--stroke)*-1)_0_white)]"
+            className="sticker-outline cursor-pointer object-contain"
           />
         </div>
-      </HeroSection>
+      </div>
     </main>
   );
 }

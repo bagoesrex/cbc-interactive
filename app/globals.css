@@ -3,6 +3,11 @@
 :root {
   --background: #0a0a0a;
   --foreground: #fcfcfc;
+  /* 0.45% dari lebar main background.
+     cqw resolve ke @container terdekat (stage di page.tsx),
+     jadi ketebalan outline otomatis mengikuti ukuran background.
+     Harus di :root (bukan di stage) agar var() di-resolve
+     pada <img> yang merupakan descendant container. */
   --stroke: 0.45cqw;
 }
 
@@ -31,4 +36,24 @@ body {
 
 .animate-scale-pulse {
   animation: scale-pulse 4s ease-in-out infinite;
+}
+
+/* Outline putih yang tebalnya mengikuti ukuran main background
+   via var(--stroke). Dipakai bareng @container pada stage. */
+.sticker-outline {
+  filter: drop-shadow(var(--stroke) 0 0 white)
+    drop-shadow(calc(var(--stroke) * -1) 0 0 white)
+    drop-shadow(0 var(--stroke) 0 white)
+    drop-shadow(0 calc(var(--stroke) * -1) 0 white);
+  transition:
+    filter 200ms,
+    scale 200ms;
+}
+
+.sticker-outline:hover {
+  filter: brightness(1.07) drop-shadow(var(--stroke) 0 0 white)
+    drop-shadow(calc(var(--stroke) * -1) 0 0 white)
+    drop-shadow(0 var(--stroke) 0 white)
+    drop-shadow(0 calc(var(--stroke) * -1) 0 white);
+  scale: 1.03;
 }
