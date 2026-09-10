@@ -4,6 +4,9 @@ import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import { HERO_IMAGE } from "@/config/site";
 import { Dialog } from "./dialog";
+import { GiftBody } from "./dialog-bodies/GiftBody";
+import { GalleryBody } from "./dialog-bodies/GalleryBody";
+import { LetterBody } from "./dialog-bodies/LetterBody";
 
 interface Hotspot {
   id: string;
@@ -25,14 +28,21 @@ const HOTSPOTS: Hotspot[] = [
     dialogBody: (
       <div className="relative z-0 overflow-hidden px-[2.4cqw] py-[2.4cqw]">
         <div className="font-architects-daughter relative z-10 space-y-[2.4cqw] text-[3.5cqw] font-[395] tracking-[0.3cqw]">
-          <p>Halo, nama! 🎂</p>
+          <p className="font-dancing text-[4.6cqw] leading-tight font-bold text-stone-900">
+            Halo, Megumin
+          </p>
           <p>
             Selamat hari lahir. Semoga tahun ini kamu makin sering tersenyum
             karena hal-hal kecil, dan makin jarang capek karena hal-hal besar.
           </p>
           <p>
             Terima kasih sudah jadi orang yang selalu bikin hari-hari terasa
-            lebih ringan. Selamat ulang tahun! ♡
+            lebih ringan. Tertawamu itu hadiah — hari ini giliranmu menerima
+            yang manis-manis. Selamat ulang tahun! ♡
+          </p>
+          <p className="text-[3cqw] text-stone-500">
+            Psst… masih ada 3 kejutan lain di kafe ini. Coba ketuk kado, galeri,
+            dan suratnya!
           </p>
         </div>
         <div className="absolute right-0 bottom-[-16cqw] z-0 aspect-407/624 w-[40cqw] opacity-20">
@@ -54,14 +64,7 @@ const HOTSPOTS: Hotspot[] = [
     src: "/gift.png",
     hotspotClassName: "top-[50cqh] left-[50cqw] aspect-475/470 w-[30cqw]",
     dialogTitle: "Kado Spesial",
-    dialogBody: (
-      <>
-        <p>Klik bukan sekadar kado — ini doa yang dibungkus pita.</p>
-        <p className="mt-[1.6cqw]">
-          Semoga tahun ini manisnya melebihi semua kue di etalase kafe ini!
-        </p>
-      </>
-    ),
+    dialogBody: <GiftBody />,
   },
   {
     id: "gallery",
@@ -70,32 +73,7 @@ const HOTSPOTS: Hotspot[] = [
     hotspotClassName:
       "top-[36cqh] right-[5cqw] aspect-451/384 w-[15cqw] -scale-x-100 rotate-5",
     dialogTitle: "Galeri Kenangan",
-    dialogBody: (
-      <>
-        <p>Potongan momen manis untuk disimpan baik-baik:</p>
-        <div className="mt-[2.4cqw] grid grid-cols-2 gap-[1.6cqw]">
-          {[
-            { src: "/memories.png", alt: "Kenangan manis" },
-            { src: "/character.png", alt: "Perayaan ulang tahun" },
-            { src: "/gift.png", alt: "Kado ulang tahun" },
-            { src: "/letter.png", alt: "Surat spesial" },
-          ].map((photo) => (
-            <div
-              key={photo.src}
-              className="relative aspect-square overflow-hidden rounded-2xl"
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(max-width: 400px) 40vw, 180px"
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </>
-    ),
+    dialogBody: <GalleryBody />,
   },
   {
     id: "letter",
@@ -103,17 +81,7 @@ const HOTSPOTS: Hotspot[] = [
     src: "/letter.png",
     hotspotClassName: "top-[23cqh] left-[47cqw] aspect-423/405 w-[12cqw]",
     dialogTitle: "Surat Untukmu",
-    dialogBody: (
-      <>
-        <p className="italic">
-          &ldquo;You are special&rdquo; — begitu kata kartu di meja itu, dan itu
-          benar adanya.
-        </p>
-        <p className="mt-[1.6cqw]">
-          Terima kasih sudah menjadi alasan kafe ini terasa hangat hari ini. ♡
-        </p>
-      </>
-    ),
+    dialogBody: <LetterBody />,
   },
 ];
 

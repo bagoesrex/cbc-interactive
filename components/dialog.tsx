@@ -49,8 +49,11 @@ export function Dialog({ open, title, onClose, children }: DialogProps) {
       // sementara background terus membesar -> dialog terlihat mengecil.
       className="dialog-card m-auto h-fit max-h-[78cqh] w-[90cqw] overflow-y-auto rounded-[1.8cqw] bg-[#fff8f5] text-stone-800 shadow-2xl"
     >
-      <div className="flex items-center justify-between gap-[3.2cqw] border-b-[0.5cqw] border-b-gray-300 bg-gray-100 px-[1.6cqw] py-[2.4cqw]">
-        <p id={titleId} className="font-dancing text-[5cqw] font-extrabold">
+      <div className="flex items-center justify-between gap-[3.2cqw] border-b-[0.4cqw] border-stone-900/10 bg-[#fff8f5] px-[3cqw] py-[2.4cqw]">
+        <p
+          id={titleId}
+          className="inline-block rounded-full border-[0.35cqw] border-stone-900 bg-amber-100 px-[3.2cqw] py-[1cqw] text-[2.8cqw] font-bold tracking-[0.18cqw] text-stone-900 uppercase"
+        >
           {title}
         </p>
         <button
@@ -58,7 +61,7 @@ export function Dialog({ open, title, onClose, children }: DialogProps) {
           autoFocus
           onClick={onClose}
           aria-label="Tutup dialog"
-          className="cursor-pointer rounded-[0.4cqw] px-[2cqw] py-[0.8cqw] text-[3.6cqw] leading-none hover:bg-stone-800/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500"
+          className="cursor-pointer rounded-[1cqw] border-[0.35cqw] border-stone-900 bg-white px-[2.2cqw] py-[1cqw] text-[3cqw] leading-none font-bold text-stone-900 transition hover:bg-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-500 active:translate-y-[0.2cqw]"
         >
           ✕
         </button>
@@ -66,9 +69,9 @@ export function Dialog({ open, title, onClose, children }: DialogProps) {
       <div className="bg-white text-[2.8cqw] outline-[0.5cqw] outline-offset-[-1.2cqw] outline-black/50 outline-dotted">
         {children}
       </div>
-      <div className="border-t-[0.4cqw] bg-red-200 py-[0.8cqw]">
-        <div className="mx-auto w-[40%] rounded-[0.8cqw] border-[0.4cqw] bg-white px-[0.8cqw] text-center">
-          <p className="font-dancing text-[3cqw] font-bold tracking-[0.4cqw]">
+      <div className="border-t-[0.35cqw] border-stone-900/10 bg-[#fff8f5] py-[1.6cqw]">
+        <div className="mx-auto w-fit rounded-full border-[0.35cqw] border-stone-900 bg-white px-[4cqw] py-[0.6cqw] text-center">
+          <p className="font-dancing text-[3cqw] font-bold tracking-[0.2cqw] text-stone-900">
             giftkuy.id
           </p>
         </div>
